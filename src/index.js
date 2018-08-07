@@ -13,7 +13,7 @@ import App from './App';
 
 /** style import(s)                                                     */
 import './styles/index.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*
   ADD LATER: REDUX
