@@ -21,7 +21,8 @@ class Landing extends Component {
         <h1 style = {{
           'text-align': 'center'
         }}>
-          Content will go here
+          Content will go here <br /><br />
+          (If no navbar is showing, change isLoggedIn to true in App.js)
         </h1>
       </div>
     )
