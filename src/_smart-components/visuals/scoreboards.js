@@ -4,34 +4,27 @@ import React, {Component} from 'react';
 /** helper import(s)                                                    */
 
 /** component import(s)                                                 */
+import { Container } from 'reactstrap';
 
 /** style import(s)                                                     */
 
 
 /*/
- *  Component: Landing
+ *  Component: Scoreboard
  *  @props {NA}
  *  @EventHandler(s): NA
- *  @Description: splash page for the initial view
+ *  @Description: Sliding carousel of
 /*/
-class Landing extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      title: "Landing"
-    }
-  }
+class Scoreboard extends Component {
   render(){
     return(
       <div>
-        <h1 style = {{
-          'text-align': 'center'
-        }}>
-          Content will go here
-        </h1>
+        <Container>
+          <h1 className="text-center"> carousel will go here</h1>
+        </Container>
       </div>
     )
   }
 }
 
-export default Landing
+export default Scoreboard;

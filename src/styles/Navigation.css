@@ -1,11 +1,8 @@
-.nav-link-wrappers{
-  margin: .0em .75em 0em .75em !important;
+.abs-center-x {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 }
-
-.link{
-  color: #000;
-  opacity: .75;
-}
-.link:hover{
-  opacity: 1;
+.nav-link{
+  color: #fffff0 !important;
 }

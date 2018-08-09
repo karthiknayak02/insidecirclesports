@@ -43,28 +43,41 @@ class Navigation extends Component {
   }
   render(){
     return(
-      <nav>
-        <Navbar color="light" light expand="md">
-         <NavbarBrand><Link to='/' >InsideCircleSports</Link></NavbarBrand>
-           <Nav className="ml-auto" navbar>
-             <NavItem className="nav-link-wrappers" >
-               <Link className="link" to = "/sport/nfl">NFL</Link>
-             </NavItem>
-             <NavItem className="nav-link-wrappers" >
-               <Link className="link" to = "/sport/nba">NBA</Link>
-             </NavItem>
-             <NavItem className="nav-link-wrappers" >
-               <Link className="link" to = "/sport/nhl">NHL</Link>
-             </NavItem>
-             <NavItem className="nav-link-wrappers" >
-               <Link className="link" to = "/sport/mlb">MLB</Link>
-             </NavItem>
-             <NavItem className="nav-link-wrappers" >
-               <Link className="link" to = "/sport/mls">MLS</Link>
-             </NavItem>
-           </Nav>
-       </Navbar>
-      </nav>
+      <div>
+        <Navbar color="dark" light expand="md">
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="pull-sm-left" navbar>
+              <NavItem>
+                <Link className="nav-link" to ="/sport/nba">NBA</Link>
+              </NavItem>
+              <NavItem>
+                <Link className="nav-link" to ="/sport/nfl">NFL</Link>
+              </NavItem>
+              <NavItem>
+                <Link className="nav-link" to ="/sport/mlb">MLB</Link>
+              </NavItem>
+              <NavItem>
+                <Link className="nav-link" to ="/sport/nhl">NHL</Link>
+              </NavItem>
+              <NavItem>
+                <Link className="nav-link" to = "/sport/mls">MLS</Link>
+              </NavItem>
+            </Nav>
+          </Collapse>
+          <Nav className="abs-center-x">
+            <Link to = "/" className="nav-link"><NavbarBrand >InsideCircleSports</NavbarBrand></Link>
+          </Nav>
+          <Nav className = "pull-sm-right" navbar>
+            <NavItem>
+              <Link className="nav-link" to ="/login">Login</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" to ="/signup">SignUp</Link>
+            </NavItem>
+          </Nav>
+        </Navbar>
+      </div>
     )
   }
 }
