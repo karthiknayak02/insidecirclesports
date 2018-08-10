@@ -1,10 +1,6 @@
 /** main import(s)                                                      */
 import React, {Component} from 'react';
 
-/** helper import(s)                                                    */
-
-/** component import(s)                                                 */
-
 /** style import(s)                                                     */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/SignupLogin.css';
