@@ -13,3 +13,9 @@ Sprint End Date: 08/20/18
 - Barrow: Signup/Login
 - Nayak: Backend tools research
 - Steinbach Database tools research
+
+### How to Run:
+
+- Clone repository and open branch
+- Run `npm install`
+- Run `npm start`
