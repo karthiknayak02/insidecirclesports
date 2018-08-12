@@ -1,11 +1,5 @@
-/** main import(s)                                                      */
+/* - Main import(s) 				-- */
 import React, { Component } from 'react';
-
-/** helper import(s)                                                    */
-
-/** component import(s)                                                 */
-
-/** style import(s)                                                     */
 
 /*/
  *  Component: SportsPageMLB

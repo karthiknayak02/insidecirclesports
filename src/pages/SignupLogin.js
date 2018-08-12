@@ -1,7 +1,7 @@
-/** main import(s)                                                      */
+/* - Main import(s) 				-- */
 import React, { Component } from 'react';
 
-/** style import(s)                                                     */
+/* - Style import(s) 			-- */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/SignupLogin.css';
 

@@ -1,10 +1,10 @@
-/** main import(s)                                                      */
+/* - Main import(s) 					-- */
 import React, { Component } from 'react';
 
-/** helper import(s)                                                    */
+/* - Helper import(s) 				-- */
 import { Switch, Route } from 'react-router-dom';
 
-/** page import(s)                                                      */
+/* - Page import(s) 					-- */
 import Landing from '../pages/Landing';
 import SportsPageMLB from '../pages/SportsPageMLB';
 import SportsPageMLS from '../pages/SportsPageMLS';
@@ -12,8 +12,6 @@ import SportsPageNBA from '../pages/SportsPageNBA';
 import SportsPageNFL from '../pages/SportsPageNFL';
 import SportsPageNHL from '../pages/SportsPageNHL';
 import SignupLogin from '../pages/SignupLogin';
-
-/** style import(s)                                                     */
 
 /*/
  *  Component: Routes

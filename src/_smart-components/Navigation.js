@@ -1,10 +1,10 @@
-/** main import(s)                                                      */
+/* - Main import(s) 				-- */
 import React, { Component } from 'react';
 
-/** helper import(s)                                                    */
+/* - Helper import(s) 			-- */
 import { Link } from 'react-router-dom';
 
-/** component import(s)                                                 */
+/* - Component import(s) 		-- */
 import {
 	Collapse,
 	Navbar,
@@ -19,7 +19,7 @@ import {
 	DropdownItem,
 } from 'reactstrap';
 
-/** style import(s)                                                     */
+/* - Style import(s) 			-- */
 import '../styles/Navigation.css';
 
 /*/
