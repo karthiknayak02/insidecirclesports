@@ -1,12 +1,5 @@
-/** main import(s)                                                      */
-import React, {Component} from 'react';
-
-/** helper import(s)                                                    */
-
-/** component import(s)                                                 */
-
-/** style import(s)                                                     */
-
+/* - Main import(s) 				-- */
+import React, { Component } from 'react';
 
 /*/
  *  Component: Profile
@@ -15,13 +8,9 @@ import React, {Component} from 'react';
  *  @Description:
 /*/
 class Profile extends Component {
-  render(){
-    return(
-      <div>
-        Profile Page
-      </div>
-    )
-  }
+	render() {
+		return <div>Profile Page </div>;
+	}
 }
 
-export default Profile
+export default Profile;

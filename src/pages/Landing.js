@@ -1,12 +1,5 @@
-/** main import(s)                                                      */
-import React, {Component} from 'react';
-
-/** helper import(s)                                                    */
-
-/** component import(s)                                                 */
-
-/** style import(s)                                                     */
-
+/* - Main import(s) 				-- */
+import React, { Component } from 'react';
 
 /*/
  *  Component: Landing
@@ -34,4 +27,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing
+export default Landing;

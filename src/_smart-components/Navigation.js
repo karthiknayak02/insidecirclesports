@@ -1,35 +1,36 @@
-/** main import(s)                                                      */
-import React, {Component} from 'react';
+/* - Main import(s) 				-- */
+import React, { Component } from 'react';
 
-/** helper import(s)                                                    */
+/* - Helper import(s) 			-- */
 import { Link } from 'react-router-dom';
 
-/** component import(s)                                                 */
+/* - Component import(s) 		-- */
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+	Collapse,
+	Navbar,
+	NavbarToggler,
+	NavbarBrand,
+	Nav,
+	NavItem,
+	NavLink,
+	UncontrolledDropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem,
+} from 'reactstrap';
 
-/** style import(s)                                                     */
+/* - Style import(s) 			-- */
 import '../styles/Navigation.css';
 
 /*/
  *  Component: Navigation
  *  @props {NA}
  *  @EventHandler(s): NA
- *  @Description: Navigation bar
+ *  @Description: Navigation Bar
 /*/
 class Navigation extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
@@ -82,4 +83,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation
+export default Navigation;

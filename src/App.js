@@ -10,7 +10,6 @@ import Navigation from './_smart-components/Navigation';
 /** style import(s)                                                     */
 import './styles/App.css';
 
-
 /*/
  *  Component: App
  *  @props {}
@@ -18,14 +17,20 @@ import './styles/App.css';
  *  @Description:
 /*/
 class App extends Component {
-  render() {
-    return (
-      <div className="app-wrapper">
-        <Navigation />
-        <Routes />
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			isLoggedIn: false,
+		};
+	}
+
+	render() {
+		return (
+			<div className="app-wrapper">
+				{this.state.isLoggedIn ? <Navigation /> : null} <Routes />
+			</div>
+		);
+	}
 }
 
 export default App;

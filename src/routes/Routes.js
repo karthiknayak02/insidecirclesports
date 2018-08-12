@@ -1,20 +1,17 @@
-/** main import(s)                                                      */
-import React, {Component} from 'react';
+/* - Main import(s) 					-- */
+import React, { Component } from 'react';
 
-/** helper import(s)                                                    */
+/* - Helper import(s) 				-- */
 import { Switch, Route } from 'react-router-dom';
 
-/** page import(s)                                                 */
+/* - Page import(s) 					-- */
 import Landing from '../pages/Landing';
 import SportsPageMLB from '../pages/SportsPageMLB';
 import SportsPageMLS from '../pages/SportsPageMLS';
 import SportsPageNBA from '../pages/SportsPageNBA';
 import SportsPageNFL from '../pages/SportsPageNFL';
 import SportsPageNHL from '../pages/SportsPageNHL';
-
-
-/** style import(s)                                                     */
-
+import SignupLogin from '../pages/SignupLogin';
 
 /*/
  *  Component: Routes
@@ -23,20 +20,21 @@ import SportsPageNHL from '../pages/SportsPageNHL';
  *  @Description: Handls
 /*/
 class Routes extends Component {
-  render(){
-    return(
-      <main>
-        <Switch>
-          <Route exact path = "/" component={Landing}/>
-          <Route path = "/sport/mlb" component={SportsPageMLB}/>
-          <Route path = "/sport/mls" component={SportsPageMLS}/>
-          <Route path = "/sport/nba" component={SportsPageNBA}/>
-          <Route path = "/sport/nfl" component={SportsPageNFL}/>
-          <Route path = "/sport/nhl" component={SportsPageNHL}/>
-        </Switch>
-      </main>
-    )
-  }
+	render() {
+		return (
+			<main>
+				<Switch>
+					<Route exact path="/" component={Landing} />
+					<Route path="/sport/mlb" component={SportsPageMLB} />
+					<Route path="/sport/mls" component={SportsPageMLS} />
+					<Route path="/sport/nba" component={SportsPageNBA} />
+					<Route path="/sport/nfl" component={SportsPageNFL} />
+					<Route path="/sport/nhl" component={SportsPageNHL} />
+					<Route path="/login" component={SignupLogin} />
+				</Switch>
+			</main>
+		);
+	}
 }
 
-export default Routes
+export default Routes;
