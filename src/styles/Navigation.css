@@ -1,0 +1,8 @@
+.abs-center-x {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+.nav-link{
+  color: #fffff0 !important;
+}
