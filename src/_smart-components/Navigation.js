@@ -1,5 +1,5 @@
 /** main import(s)                                                      */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 /** helper import(s)                                                    */
 import { Link } from 'react-router-dom';
@@ -16,7 +16,8 @@ import {
 	UncontrolledDropdown,
 	DropdownToggle,
 	DropdownMenu,
-	DropdownItem } from 'reactstrap';
+	DropdownItem,
+} from 'reactstrap';
 
 /** style import(s)                                                     */
 import '../styles/Navigation.css';
@@ -25,7 +26,7 @@ import '../styles/Navigation.css';
  *  Component: Navigation
  *  @props {NA}
  *  @EventHandler(s): NA
- *  @Description: Navigation bar
+ *  @Description: Navigation Bar
 /*/
 class Navigation extends Component {
 	constructor(props) {
@@ -33,40 +34,55 @@ class Navigation extends Component {
 
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-			isOpen: false
+			isOpen: false,
 		};
 	}
+
 	toggle() {
 		this.setState({
-			isOpen: !this.state.isOpen
+			isOpen: !this.state.isOpen,
 		});
 	}
-	render(){
-		return(
+
+	render() {
+		return (
 			<nav>
 				<Navbar color="light" light expand="md">
-				 <NavbarBrand><Link to='/' >InsideCircleSports</Link></NavbarBrand>
-					 <Nav className="ml-auto" navbar>
-						 <NavItem className="nav-link-wrappers" >
-							 <Link className="link" to = "/sport/nfl">NFL</Link>
-						 </NavItem>
-						 <NavItem className="nav-link-wrappers" >
-							 <Link className="link" to = "/sport/nba">NBA</Link>
-						 </NavItem>
-						 <NavItem className="nav-link-wrappers" >
-							 <Link className="link" to = "/sport/nhl">NHL</Link>
-						 </NavItem>
-						 <NavItem className="nav-link-wrappers" >
-							 <Link className="link" to = "/sport/mlb">MLB</Link>
-						 </NavItem>
-						 <NavItem className="nav-link-wrappers" >
-							 <Link className="link" to = "/sport/mls">MLS</Link>
-						 </NavItem>
-					 </Nav>
-			 </Navbar>
+					<NavbarBrand>
+						<Link to="/">InsideCircleSports</Link>
+					</NavbarBrand>
+
+					<Nav className="ml-auto" navbar>
+						<NavItem className="nav-link-wrappers">
+							<Link className="link" to="/sport/nfl">
+								NFL
+							</Link>
+						</NavItem>
+						<NavItem className="nav-link-wrappers">
+							<Link className="link" to="/sport/nba">
+								NBA
+							</Link>
+						</NavItem>
+						<NavItem className="nav-link-wrappers">
+							<Link className="link" to="/sport/nhl">
+								NHL
+							</Link>
+						</NavItem>
+						<NavItem className="nav-link-wrappers">
+							<Link className="link" to="/sport/mlb">
+								MLB
+							</Link>
+						</NavItem>
+						<NavItem className="nav-link-wrappers">
+							<Link className="link" to="/sport/mls">
+								MLS
+							</Link>
+						</NavItem>
+					</Nav>
+				</Navbar>
 			</nav>
-		)
+		);
 	}
 }
 
-export default Navigation
+export default Navigation;

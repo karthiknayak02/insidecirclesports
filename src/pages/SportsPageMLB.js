@@ -1,12 +1,11 @@
 /** main import(s)                                                      */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 /** helper import(s)                                                    */
 
 /** component import(s)                                                 */
 
 /** style import(s)                                                     */
-
 
 /*/
  *  Component: SportsPageMLB
@@ -15,14 +14,12 @@ import React, {Component} from 'react';
  *  @Description: Skeleton for MLB Sports Page
 /*/
 class SportsPageMLB extends Component {
-	render(){
-	 return(
-		<div>
-			<h1>
-			 MLB Page
-			</h1>
-		</div>
-	 )
+	render() {
+		return (
+			<div>
+				<h1>MLB Page</h1>
+			</div>
+		);
 	}
 }
 

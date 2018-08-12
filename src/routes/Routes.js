@@ -1,5 +1,5 @@
 /** main import(s)                                                      */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 /** helper import(s)                                                    */
 import { Switch, Route } from 'react-router-dom';
@@ -11,11 +11,9 @@ import SportsPageMLS from '../pages/SportsPageMLS';
 import SportsPageNBA from '../pages/SportsPageNBA';
 import SportsPageNFL from '../pages/SportsPageNFL';
 import SportsPageNHL from '../pages/SportsPageNHL';
-import SignupLogin   from '../pages/SignupLogin';
-
+import SignupLogin from '../pages/SignupLogin';
 
 /** style import(s)                                                     */
-
 
 /*/
  *  Component: Routes
@@ -24,21 +22,21 @@ import SignupLogin   from '../pages/SignupLogin';
  *  @Description: Handls
 /*/
 class Routes extends Component {
-  render(){
-    return(
-      <main>
-        <Switch>
-          <Route exact path = "/" component={Landing}/>
-          <Route path = "/sport/mlb" component={SportsPageMLB}/>
-          <Route path = "/sport/mls" component={SportsPageMLS}/>
-          <Route path = "/sport/nba" component={SportsPageNBA}/>
-          <Route path = "/sport/nfl" component={SportsPageNFL}/>
-          <Route path = "/sport/nhl" component={SportsPageNHL}/>
-          <Route path = "/login"     component={SignupLogin}/>
-        </Switch>
-      </main>
-    )
-  }
+	render() {
+		return (
+			<main>
+				<Switch>
+					<Route exact path="/" component={Landing} />
+					<Route path="/sport/mlb" component={SportsPageMLB} />
+					<Route path="/sport/mls" component={SportsPageMLS} />
+					<Route path="/sport/nba" component={SportsPageNBA} />
+					<Route path="/sport/nfl" component={SportsPageNFL} />
+					<Route path="/sport/nhl" component={SportsPageNHL} />
+					<Route path="/login" component={SignupLogin} />
+				</Switch>
+			</main>
+		);
+	}
 }
 
-export default Routes
+export default Routes;
