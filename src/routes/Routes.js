@@ -11,7 +11,7 @@ import SportsPageMLS from '../pages/SportsPageMLS';
 import SportsPageNBA from '../pages/SportsPageNBA';
 import SportsPageNFL from '../pages/SportsPageNFL';
 import SportsPageNHL from '../pages/SportsPageNHL';
-import SignupLogin from '../pages/SignupLogin';
+import SignupLoginPage from '../pages/SignupLogin/SignupLoginPage';
 
 /*/
  *  Component: Routes
@@ -30,7 +30,7 @@ class Routes extends Component {
 					<Route path="/sport/nba" component={SportsPageNBA} />
 					<Route path="/sport/nfl" component={SportsPageNFL} />
 					<Route path="/sport/nhl" component={SportsPageNHL} />
-					<Route path="/login" component={SignupLogin} />
+					<Route path="/login" component={SignupLoginPage} />
 				</Switch>
 			</main>
 		);
