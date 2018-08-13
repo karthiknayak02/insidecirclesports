@@ -1,5 +1,14 @@
-/* - Main import(s) 				-- */
-import React, { Component } from 'react';
+/** main import(s)                                                      */
+import React, {Component} from 'react';
+
+/** helper import(s)                                                    */
+import _ from 'lodash'
+/** component import(s)                                                 */
+import { Container, Row, Col } from 'reactstrap';
+
+/** style import(s)                                                     */
+import '../styles/Landing.css';
+
 
 /*/
  *  Component: Landing
@@ -15,13 +24,12 @@ class Landing extends Component {
     }
   }
   render(){
+    
     return(
-      <div>
-        <h1 style = {{
-          'text-align': 'center'
-        }}>
-          Content will go here
-        </h1>
+      <div className = "landing-wrapper">
+        <Container>
+
+        </Container>
       </div>
     )
   }

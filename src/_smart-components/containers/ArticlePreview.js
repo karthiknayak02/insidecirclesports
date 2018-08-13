@@ -4,27 +4,33 @@ import React, {Component} from 'react';
 /** helper import(s)                                                    */
 
 /** component import(s)                                                 */
-import { Container } from 'reactstrap';
 
 /** style import(s)                                                     */
 
+/** Redux import(s)                                                     */
 
 /*/
- *  Component: Scoreboard
- *  @props {NA}
- *  @EventHandler(s): NA
- *  @Description: Sliding carousel of
+ *  Component: Articles
+ *  @props {Title, Date, Preview, img}
+ *  @EventHandler(s):
+ *  @Description:
 /*/
-class Scoreboard extends Component {
+class ArticlePreview extends Component {
+  constructor(props){
+    super(props)
+    console.log(props);
+  }
+
   render(){
     return(
       <div>
-        <Container>
-          <h1 className="text-center"> carousel will go here</h1>
-        </Container>
+        <img src = ""/>
+        <h2></h2>
+        <h4><i></i></h4>
+        <p></p>
       </div>
     )
   }
 }
 
-export default Scoreboard;
+export default ArticlePreview

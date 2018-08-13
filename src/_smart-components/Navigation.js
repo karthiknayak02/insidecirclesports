@@ -21,6 +21,7 @@ import {
 
 /* - Style import(s) 			-- */
 import '../styles/Navigation.css';
+import Logo from '../assets/imgs/logo.png'
 
 /*/
  *  Component: Navigation
@@ -44,7 +45,7 @@ class Navigation extends Component {
   }
   render(){
     return(
-      <div>
+      <div className = "navbar-wrapper bg-dark">
         <Navbar color="dark" light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -67,7 +68,7 @@ class Navigation extends Component {
             </Nav>
           </Collapse>
           <Nav className="abs-center-x">
-            <Link to = "/" className="nav-link"><NavbarBrand >InsideCircleSports</NavbarBrand></Link>
+            <Link to = "/" className="nav-link"><NavbarBrand ><img src = {Logo} width = "64px" height = "64px"/></NavbarBrand></Link>
           </Nav>
           <Nav className = "pull-sm-right" navbar>
             <NavItem>
