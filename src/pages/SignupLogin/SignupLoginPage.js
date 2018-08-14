@@ -19,10 +19,14 @@ class SignupLoginPage extends Component {
 		super(props);
 	}
 
+	handleLoginSubmit(email, password, rememberMeIsChecked) {
+		alert(email + password + rememberMeIsChecked);
+	}
+
 	render() {
 		return (
 			<div className="signup-login-page">
-				<Login />
+				<Login receiveLoginInformation={this.handleLoginSubmit} />
 				<Signup />
 			</div>
 		);

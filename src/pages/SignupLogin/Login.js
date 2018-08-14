@@ -26,6 +26,7 @@ class Login extends Component {
 		};
 	}
 
+	// TODO: combine these 3 functions into one
 	handleEmailChange(event) {
 		this.setState({ email: event.target.value });
 	}
@@ -45,14 +46,10 @@ class Login extends Component {
 		console.log('Password: ' + this.state.password);
 		console.log('Remember: ' + this.state.rememberMeIsChecked);
 
-		alert(
-			'Email, password, remember me status: ' +
-				this.state.email +
-				', ' +
-				this.state.password +
-				', ' +
-				this.state.rememberMeIsChecked
-		);
+		// Validate password, email...
+
+		// Send data to parent, SignupLoginPage
+		this.props.receiveLoginInformation(this.state.email, this.state.password, this.state.rememberMeIsChecked);
 
 		event.preventDefault();
 	}
@@ -61,7 +58,7 @@ class Login extends Component {
 		return (
 			<div>
 				<div className="login-box">
-					<form class="form-signin">
+					<form class="form-signin" onSubmit={this.handleSubmission}>
 						<img
 							class="mb-4"
 							src="https://s8.postimg.cc/qh5ck71gl/test_logo.png"
@@ -75,6 +72,7 @@ class Login extends Component {
 						<label for="inputEmail" class="sr-only">
 							Email address
 						</label>
+
 						<input
 							type="email"
 							id="inputEmail"
@@ -111,15 +109,13 @@ class Login extends Component {
 							</label>
 						</div>
 
-						<button class="btn btn-lg btn-primary btn-block" type="submit" onClick={this.handleSubmission}>
-							Sign in
-						</button>
+						<button class="btn btn-lg btn-primary btn-block">Sign in</button>
 
-						<hr />
+						{/* <hr /> */}
 
-						<button class="btn btn-lg btn-success btn-block" type="submit" onClick={this.handleSubmission}>
+						{/* <button class="btn btn-lg btn-success btn-block" type="submit" onClick={this.handleSubmission}>
 							Sign up
-						</button>
+						</button> */}
 
 						<p class="mt-5 mb-3 text-muted">© 2018</p>
 					</form>
