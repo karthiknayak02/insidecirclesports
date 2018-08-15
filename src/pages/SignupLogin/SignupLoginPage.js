@@ -10,8 +10,8 @@ import Signup from './Signup';
 
 /*/
 *  Component: SignupLogin
-*  @props {NA}
-*  @EventHandler(s): handleLoginSubmit, alternateForms
+*  @props: TBD
+*  @EventHandler(s): TBD
 *  @Description: Signup/Login page
 /*/
 class SignupLoginPage extends Component {
@@ -27,7 +27,20 @@ class SignupLoginPage extends Component {
 
 	/* Receive data from login submission and send to backend */
 	handleLoginSubmit(email, password, rememberMeIsChecked) {
-		console.log(email + password + rememberMeIsChecked);
+		console.log('Submitted login information:\n');
+		console.log('Email: ' + email);
+		console.log('Password: ' + password);
+		console.log('Remember Me checkbox: ' + rememberMeIsChecked);
+	}
+
+	/* Receive data from sign up submission and send to backend */
+	handleSignupSubmit(firstName, lastName, email, password, confirmPassword) {
+		console.log('Submitted signup information:\n');
+		console.log('First: ' + firstName);
+		console.log('Last: ' + lastName);
+		console.log('Email: ' + email);
+		console.log('Password: ' + password);
+		console.log('Confirm Password: ' + confirmPassword);
 	}
 
 	/* Alternate form displayed between sign in and sign up */

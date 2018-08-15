@@ -5,11 +5,18 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/SignupLoginHeader.css';
 
+/*/
+*  Component: SignupLoginHeader
+*  @props: TBD
+*  @EventHandler(s): TBD
+*  @Description: Logo and sign up/in text display
+/*/
 class SignupLoginHeader extends Component {
 	constructor(props) {
 		super(props);
 	}
 
+	/* Show IC logo and text depending on the current form */
 	render() {
 		return (
 			<div className="entry-header">

@@ -8,15 +8,15 @@ import SignupLoginHeader from './SignupLoginHeader';
 
 /*/
 *  Component: Login
-*  @props {NA}
-*  @EventHandler(s): NA
+*  @props: TBD
+*  @EventHandler(s): TBD
 *  @Description: Login form
 /*/
 class Login extends Component {
 	constructor(props) {
 		super(props);
-		this.handleSubmission = this.handleSubmission.bind(this);
-		this.showSignUp = this.showSignUp.bind(this);
+		this.handleLoginSubmission = this.handleLoginSubmission.bind(this);
+		this.showSignup = this.showSignup.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 
 		this.state = {
@@ -34,18 +34,13 @@ class Login extends Component {
 	}
 
 	/* Propagate data to parent component to send to backend */
-	handleSubmission(event) {
-		console.log('Email: ' + this.state.email);
-		console.log('Password: ' + this.state.password);
-		console.log('Remember: ' + this.state.rememberMe);
-
+	handleLoginSubmission(event) {
 		this.props.onReceiveLoginInformation(this.state.email, this.state.password, this.state.rememberMe);
-
 		event.preventDefault();
 	}
 
 	/* Display the sign up form if the user desires */
-	showSignUp(event) {
+	showSignup(event) {
 		this.props.signUpClicked();
 	}
 
@@ -54,7 +49,7 @@ class Login extends Component {
 		return (
 			<div>
 				<div className="login-box">
-					<form class="form-signin" novalidate onSubmit={this.handleSubmission}>
+					<form class="form-signin" novalidate onSubmit={this.handleLoginSubmission}>
 						<SignupLoginHeader entryText="Sign in below" />
 
 						<label for="inputEmail" class="sr-only">
@@ -64,10 +59,8 @@ class Login extends Component {
 						<input
 							name="email"
 							type="email"
-							id="inputEmail"
 							class="form-control"
 							placeholder="Email address"
-							// required
 							autoFocus
 							value={this.state.email}
 							onChange={this.handleInputChange}
@@ -79,10 +72,8 @@ class Login extends Component {
 						<input
 							name="password"
 							type="password"
-							id="inputPassword"
 							class="form-control"
 							placeholder="Password"
-							// required
 							value={this.state.password}
 							onChange={this.handleInputChange}
 						/>
@@ -104,7 +95,7 @@ class Login extends Component {
 
 						<hr />
 
-						<button class="btn btn-lg btn-success btn-block" onClick={this.showSignUp}>
+						<button class="btn btn-lg btn-success btn-block" onClick={this.showSignup}>
 							Sign up
 						</button>
 
