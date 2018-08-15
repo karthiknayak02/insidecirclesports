@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 
 /* - Style import(s) 			-- */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/EntryHeader.css';
+import './styles/SignupLoginHeader.css';
 
-class EntryHeader extends Component {
+class SignupLoginHeader extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -20,4 +20,4 @@ class EntryHeader extends Component {
 	}
 }
 
-export default EntryHeader;
+export default SignupLoginHeader;

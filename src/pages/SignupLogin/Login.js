@@ -4,74 +4,65 @@ import React, { Component } from 'react';
 /* - Style import(s) 			-- */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Login.css';
-import EntryHeader from './EntryHeader';
+import SignupLoginHeader from './SignupLoginHeader';
 
 /*/
 *  Component: Login
 *  @props {NA}
 *  @EventHandler(s): NA
-*  @Description: Signup/Login page for users of the site
+*  @Description: Login form
 /*/
 class Login extends Component {
 	constructor(props) {
 		super(props);
-		this.handleEmailChange = this.handleEmailChange.bind(this);
-		this.handlePasswordChange = this.handlePasswordChange.bind(this);
 		this.handleSubmission = this.handleSubmission.bind(this);
-		this.handleRememberMeChange = this.handleRememberMeChange.bind(this);
 		this.showSignUp = this.showSignUp.bind(this);
+		this.handleInputChange = this.handleInputChange.bind(this);
 
 		this.state = {
 			email: '',
 			password: '',
-			rememberMeIsChecked: false,
-
-			emailValid: false,
-			passwordValid: false,
+			rememberMe: false,
 		};
 	}
 
-	// TODO: combine these 3 functions into one
-	handleEmailChange(event) {
-		this.setState({ email: event.target.value });
-	}
-
-	handlePasswordChange(event) {
-		this.setState({ password: event.target.value });
-	}
-
-	handleRememberMeChange(event) {
-		this.setState({ rememberMeIsChecked: !this.state.rememberMeIsChecked }, () => {
-			console.log('Checked: ' + this.state.rememberMeIsChecked);
+	/* Change email, password, checkbox values when user interacts with them */
+	handleInputChange(event) {
+		this.setState({
+			[event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value,
 		});
 	}
 
+	/* Propagate data to parent component to send to backend */
 	handleSubmission(event) {
 		console.log('Email: ' + this.state.email);
 		console.log('Password: ' + this.state.password);
-		console.log('Remember: ' + this.state.rememberMeIsChecked);
+		console.log('Remember: ' + this.state.rememberMe);
 
-		this.props.receiveLoginInformation(this.state.email, this.state.password, this.state.rememberMeIsChecked);
+		this.props.onReceiveLoginInformation(this.state.email, this.state.password, this.state.rememberMe);
 
 		event.preventDefault();
 	}
 
+	/* Display the sign up form if the user desires */
 	showSignUp(event) {
 		this.props.signUpClicked();
 	}
 
+	/* Show login form with sign in and sign up buttons at bottom */
 	render() {
 		return (
 			<div>
 				<div className="login-box">
 					<form class="form-signin" novalidate onSubmit={this.handleSubmission}>
-						<EntryHeader entryText="Sign in below" />
+						<SignupLoginHeader entryText="Sign in below" />
 
 						<label for="inputEmail" class="sr-only">
 							Email address
 						</label>
 
 						<input
+							name="email"
 							type="email"
 							id="inputEmail"
 							class="form-control"
@@ -79,29 +70,31 @@ class Login extends Component {
 							// required
 							autoFocus
 							value={this.state.email}
-							onChange={this.handleEmailChange}
+							onChange={this.handleInputChange}
 						/>
 
 						<label for="inputPassword" class="sr-only">
 							Password
 						</label>
 						<input
+							name="password"
 							type="password"
 							id="inputPassword"
 							class="form-control"
 							placeholder="Password"
 							// required
 							value={this.state.password}
-							onChange={this.handlePasswordChange}
+							onChange={this.handleInputChange}
 						/>
 
 						<div class="checkbox mb-3">
 							<label>
 								<input
+									name="rememberMe"
 									type="checkbox"
 									value="remember-me"
-									onChange={this.handleRememberMeChange}
-									checked={this.state.rememberMeIsChecked}
+									onChange={this.handleInputChange}
+									checked={this.state.rememberMe}
 								/>
 								Remember me
 							</label>

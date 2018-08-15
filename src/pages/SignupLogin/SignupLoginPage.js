@@ -11,14 +11,13 @@ import Signup from './Signup';
 /*/
 *  Component: SignupLogin
 *  @props {NA}
-*  @EventHandler(s): NA
-*  @Description: Signup/Login page for users of the site
+*  @EventHandler(s): handleLoginSubmit, alternateForms
+*  @Description: Signup/Login page
 /*/
 class SignupLoginPage extends Component {
 	constructor(props) {
 		super(props);
-		this.showSignupDialog = this.showSignupDialog.bind(this);
-		this.showLoginDialog = this.showLoginDialog.bind(this);
+		this.alternateForms = this.alternateForms.bind(this);
 
 		this.state = {
 			signupIsHidden: true,
@@ -26,31 +25,29 @@ class SignupLoginPage extends Component {
 		};
 	}
 
+	/* Receive data from login submission and send to backend */
 	handleLoginSubmit(email, password, rememberMeIsChecked) {
 		console.log(email + password + rememberMeIsChecked);
 	}
 
-	showSignupDialog() {
+	/* Alternate form displayed between sign in and sign up */
+	alternateForms() {
 		this.setState({
-			signupIsHidden: false,
-			loginIsHidden: true,
+			signupIsHidden: !this.state.signupIsHidden,
+			loginIsHidden: !this.state.loginIsHidden,
 		});
 	}
 
-	showLoginDialog() {
-		this.setState({
-			signupIsHidden: true,
-			loginIsHidden: false,
-		});
-	}
-
+	/* Display either a login or signup form dependent on user selection */
 	render() {
 		return (
 			<div className="signup-login-page">
 				{!this.state.loginIsHidden && (
-					<Login receiveLoginInformation={this.handleLoginSubmit} signUpClicked={this.showSignupDialog} />
+					<Login onReceiveLoginInformation={this.handleLoginSubmit} signUpClicked={this.alternateForms} />
 				)}
-				{!this.state.signupIsHidden && <Signup loginClicked={this.showLoginDialog} />}
+				{!this.state.signupIsHidden && (
+					<Signup onReceieveSignupInformation={this.handleSignupSubmit} loginClicked={this.alternateForms} />
+				)}
 			</div>
 		);
 	}

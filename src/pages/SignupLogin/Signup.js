@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 /* - Style import(s) 			-- */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Signup.css';
-import EntryHeader from './EntryHeader.js';
+import SignupLoginHeader from './SignupLoginHeader.js';
 
 class Signup extends Component {
 	constructor(props) {
@@ -25,7 +25,7 @@ class Signup extends Component {
 		return (
 			<div className="signup-box">
 				<form class="form-signin" onSubmit={this.handleSignUp}>
-					<EntryHeader entryText="Sign up below" />
+					<SignupLoginHeader entryText="Sign up below" />
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
