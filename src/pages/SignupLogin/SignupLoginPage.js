@@ -17,17 +17,32 @@ import Signup from './Signup';
 class SignupLoginPage extends Component {
 	constructor(props) {
 		super(props);
+		this.showSignupDialog = this.showSignupDialog.bind(this);
+
+		this.state = {
+			signupIsHidden: true,
+			loginIsHidden: false,
+		};
 	}
 
 	handleLoginSubmit(email, password, rememberMeIsChecked) {
-		alert(email + password + rememberMeIsChecked);
+		console.log(email + password + rememberMeIsChecked);
+	}
+
+	showSignupDialog() {
+		this.setState({
+			signupIsHidden: false,
+			loginIsHidden: true,
+		});
 	}
 
 	render() {
 		return (
 			<div className="signup-login-page">
-				<Login receiveLoginInformation={this.handleLoginSubmit} />
-				<Signup />
+				{!this.state.loginIsHidden && (
+					<Login receiveLoginInformation={this.handleLoginSubmit} signUpClicked={this.showSignupDialog} />
+				)}
+				{!this.state.signupIsHidden && <Signup />}
 			</div>
 		);
 	}

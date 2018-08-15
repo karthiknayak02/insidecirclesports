@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 /* - Style import(s) 			-- */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Login.css';
+import EntryHeader from './EntryHeader';
 
 /*/
 *  Component: Login
@@ -18,11 +19,15 @@ class Login extends Component {
 		this.handlePasswordChange = this.handlePasswordChange.bind(this);
 		this.handleSubmission = this.handleSubmission.bind(this);
 		this.handleRememberMeChange = this.handleRememberMeChange.bind(this);
+		this.showSignUp = this.showSignUp.bind(this);
 
 		this.state = {
 			email: '',
 			password: '',
 			rememberMeIsChecked: false,
+
+			emailValid: false,
+			passwordValid: false,
 		};
 	}
 
@@ -46,7 +51,7 @@ class Login extends Component {
 		console.log('Password: ' + this.state.password);
 		console.log('Remember: ' + this.state.rememberMeIsChecked);
 
-		// Validate password, email...
+		// Validate password, email
 
 		// Send data to parent, SignupLoginPage
 		this.props.receiveLoginInformation(this.state.email, this.state.password, this.state.rememberMeIsChecked);
@@ -54,20 +59,16 @@ class Login extends Component {
 		event.preventDefault();
 	}
 
+	showSignUp(event) {
+		this.props.signUpClicked();
+	}
+
 	render() {
 		return (
 			<div>
 				<div className="login-box">
-					<form class="form-signin" onSubmit={this.handleSubmission}>
-						<img
-							class="mb-4"
-							src="https://s8.postimg.cc/qh5ck71gl/test_logo.png"
-							alt=""
-							width="102"
-							height="102"
-						/>
-
-						<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+					<form class="form-signin" novalidate onSubmit={this.handleSubmission}>
+						<EntryHeader entryText="Sign in below" />
 
 						<label for="inputEmail" class="sr-only">
 							Email address
@@ -78,8 +79,8 @@ class Login extends Component {
 							id="inputEmail"
 							class="form-control"
 							placeholder="Email address"
-							required=""
-							autoFocus=""
+							// required
+							autoFocus
 							value={this.state.email}
 							onChange={this.handleEmailChange}
 						/>
@@ -92,7 +93,7 @@ class Login extends Component {
 							id="inputPassword"
 							class="form-control"
 							placeholder="Password"
-							required=""
+							// required
 							value={this.state.password}
 							onChange={this.handlePasswordChange}
 						/>
@@ -111,11 +112,11 @@ class Login extends Component {
 
 						<button class="btn btn-lg btn-primary btn-block">Sign in</button>
 
-						{/* <hr /> */}
+						<hr />
 
-						{/* <button class="btn btn-lg btn-success btn-block" type="submit" onClick={this.handleSubmission}>
+						<button class="btn btn-lg btn-success btn-block" type="submit" onClick={this.showSignUp}>
 							Sign up
-						</button> */}
+						</button>
 
 						<p class="mt-5 mb-3 text-muted">© 2018</p>
 					</form>
