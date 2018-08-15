@@ -51,7 +51,7 @@ class SignupLoginPage extends Component {
 		});
 	}
 
-	/* Display either a login or signup form dependent on user selection */
+	/* Display either a login or signup form dependent on user's selection */
 	render() {
 		return (
 			<div className="signup-login-page">
