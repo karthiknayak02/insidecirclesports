@@ -51,9 +51,6 @@ class Login extends Component {
 		console.log('Password: ' + this.state.password);
 		console.log('Remember: ' + this.state.rememberMeIsChecked);
 
-		// Validate password, email
-
-		// Send data to parent, SignupLoginPage
 		this.props.receiveLoginInformation(this.state.email, this.state.password, this.state.rememberMeIsChecked);
 
 		event.preventDefault();
@@ -114,7 +111,7 @@ class Login extends Component {
 
 						<hr />
 
-						<button class="btn btn-lg btn-success btn-block" type="submit" onClick={this.showSignUp}>
+						<button class="btn btn-lg btn-success btn-block" onClick={this.showSignUp}>
 							Sign up
 						</button>
 

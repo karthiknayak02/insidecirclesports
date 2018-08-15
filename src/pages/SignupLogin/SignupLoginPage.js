@@ -18,6 +18,7 @@ class SignupLoginPage extends Component {
 	constructor(props) {
 		super(props);
 		this.showSignupDialog = this.showSignupDialog.bind(this);
+		this.showLoginDialog = this.showLoginDialog.bind(this);
 
 		this.state = {
 			signupIsHidden: true,
@@ -36,13 +37,20 @@ class SignupLoginPage extends Component {
 		});
 	}
 
+	showLoginDialog() {
+		this.setState({
+			signupIsHidden: true,
+			loginIsHidden: false,
+		});
+	}
+
 	render() {
 		return (
 			<div className="signup-login-page">
 				{!this.state.loginIsHidden && (
 					<Login receiveLoginInformation={this.handleLoginSubmit} signUpClicked={this.showSignupDialog} />
 				)}
-				{!this.state.signupIsHidden && <Signup />}
+				{!this.state.signupIsHidden && <Signup loginClicked={this.showLoginDialog} />}
 			</div>
 		);
 	}
