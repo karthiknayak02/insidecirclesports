@@ -35,8 +35,8 @@ class Login extends Component {
 
 	/* Propagate data to parent component to send to backend */
 	handleLoginSubmission(event) {
-		this.props.onReceiveLoginInformation(this.state.email, this.state.password, this.state.rememberMe);
 		event.preventDefault();
+		this.props.onReceiveLoginInformation(this.state.email, this.state.password, this.state.rememberMe);
 	}
 
 	/* Display the sign up form if the user desires */

@@ -37,6 +37,7 @@ class Signup extends Component {
 
 	/* Propagate data to parent component to send to backend */
 	handleSignupSubmission(event) {
+		event.preventDefault();
 		this.props.onReceieveSignupInformation(
 			this.state.firstName,
 			this.state.lastName,
@@ -44,8 +45,6 @@ class Signup extends Component {
 			this.state.password,
 			this.state.confirmPassword
 		);
-
-		event.preventDefault();
 	}
 
 	/* Change rendered form to login form when clicked */
