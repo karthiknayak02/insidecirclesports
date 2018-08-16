@@ -25,7 +25,7 @@ class ArticlePreview extends Component {
     return(
       <div>
         <img src = ""/>
-        <h2></h2>
+        <h2> </h2>
         <h4><i></i></h4>
         <p></p>
       </div>

@@ -24,7 +24,7 @@ class Landing extends Component {
     }
   }
   render(){
-    
+
     return(
       <div className = "landing-wrapper">
         <Container>
