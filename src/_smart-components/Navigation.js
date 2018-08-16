@@ -49,7 +49,7 @@ class Navigation extends Component {
 			<nav>
 				<Navbar color="light" light expand="md">
 					<NavbarBrand>
-						<Link to="/">InsideCircleSports</Link>
+						<Link to="/">Inside Circle Sports</Link>
 					</NavbarBrand>
 
 					<Nav className="ml-auto" navbar>
